@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*some components*/
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/*Mobile Screen*/
+@media (min-width: 415px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/*Medium Screen (Ipad)*/
+@media (min-width: 821px) {
+    .container {
+        width: 800px;
+    }
+}
+
+/*Big Screen*/
+@media (min-width: 1215px) {
+    .container {
+        width: 1115px;
+    }
+}
