@@ -4,9 +4,19 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+}
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Cairo', sans-serif;
-    font-family: 'Work Sans', sans-serif;
 }
 ul {
     list-style: none;
@@ -42,3 +52,81 @@ a {
     }
 }
 
+/*Style Header Section*/
+.header {
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 10px #ddd;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+    .header .container {
+        flex-direction: column;
+    }
+}
+.header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 73px;
+    color: var(--main-color);
+    font-size: 1.6em;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+    .header .logo {
+        height: 50px;
+        border-bottom: 3px solid #fafafa;
+    }
+}
+.header .main-nav {
+    display: flex;
+}
+.header .main-nav > li > a {
+    display: flex;
+    position: relative;
+    -o-transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    transition: var(--main-transition);
+    height: 73px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    color: black;
+    overflow: hidden;
+}
+@media (max-width: 767px) {
+    .header .main-nav > li > a {
+        height: 50px;
+        padding: 0 15px;
+    }
+}
+.header .main-nav > li > a::before {
+    content: "";
+    width: 100%;
+    background-color: var(--main-color);
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    -o-transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.header .main-nav > li > a:hover {
+    background-color: #fafafa;
+    color: var(--main-color);
+}
+.header .main-nav > li > a:hover::before{
+    left: 0;
+}
