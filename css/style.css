@@ -1,9 +1,21 @@
+/*Global Variables*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
 /*some components*/
 .container {
     padding-left: 15px;
@@ -11,24 +23,22 @@
     margin-left: auto;
     margin-right: auto;
   }
-
 /*Mobile Screen*/
 @media (min-width: 415px) {
     .container {
         width: 100%;
     }
 }
-
 /*Medium Screen (Ipad)*/
 @media (min-width: 821px) {
     .container {
         width: 800px;
     }
 }
-
 /*Big Screen*/
 @media (min-width: 1215px) {
     .container {
         width: 1115px;
     }
 }
+
