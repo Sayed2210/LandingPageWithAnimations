@@ -197,6 +197,15 @@ a {
         transform: translateX(10px);
 }
 }
+@keyframes flashing {
+    0%, 40% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+    }
+}
 /*Style Header Section*/
 .header {
     background-color: white;
@@ -496,4 +505,67 @@ a {
 .articles .box:hover .info i {
     -webkit-animation: moving-arrow 0.5s linear infinite;
     animation: moving-arrow 0.5s linear infinite;
+}
+
+/*Style Gallery*/
+.gallery {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 40px;
+}
+.gallery .box {
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 20px 20px -20px rgba(0, 0, 0, .5);
+}
+.gallery .box .image {
+    position: relative;
+    overflow: hidden;
+    -o-transition: var(--main-transitin);
+    -webkit-transition: var(--main-transitin);
+    -moz-transition: var(--main-transitin);
+    -ms-transition: var(--main-transitin);
+    transition: var(--main-transitin);
+}
+.gallery .box .image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -o-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, 0.21);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: 2;
+}
+.gallery .box .image:hover::before {
+    -webkit-animation: flashing 0.7s;
+    animation: flashing 0.7s;
+}
+.gallery .box img {
+    max-width: 100%;
+    -o-transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    transition: 0.7s;
+}
+.gallery .box .image:hover img {
+    -o-transform: rotate(1deg) scale(1.1);
+    -webkit-transform: rotate(6deg) scale(1.1);
+    -moz-transform: rotate(6deg) scale(1.1);
+    -ms-transform: rotate(6deg) scale(1.1);
+    transform: rotate(6deg) scale(1.1);
 }
