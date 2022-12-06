@@ -729,11 +729,11 @@ img {
     height: 100px;
     right: -10px;
     top: -50px;
-    border-radius: 50%;
+    -o-border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    border-radius: 50%;
     border: 10px solid var(--section-background);
 }
 .testimonials .box h3 {
@@ -751,4 +751,31 @@ img {
 .testimonials .box p {
     line-height: 1.6;
     color: #777;
+}
+/*Style Team Member section*/
+.team-member {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: white;
+}
+.team-member .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.team-member .container .box {
+    position: relative;
+}
+.team-member .container .box::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    background-color: #ddd;
+    z-index: -2;
+}
+.team-member .box .data {
+    padding-top: 20px;
 }
