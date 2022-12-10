@@ -1281,3 +1281,133 @@ img {
 .event .subscribe form input[type="submit"]:hover {
     background-color: var(--main-color-alt);
 }
+/*Style Price Plan*/
+.pricing {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--section-background);
+    position: relative;
+}
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px , 1fr));
+    gap: 40px;
+}
+.pricing .container .box {
+    position: relative;
+    z-index: 1;
+    -o-transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    transition: var(--main-transition);
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 20px 20px -20px rgb(0 0 0 / 50%);
+}
+.pricing .box::after,
+.pricing .box::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 50%;
+    z-index: -1;
+    background-color: #fafafa;
+    -o-transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.pricing .box::after {
+    right: 0;
+    bottom: 0;
+}
+.pricing .box::before {
+    left: 0;
+    top: 0;
+}
+.pricing .box:hover::after,
+.pricing .box:hover::before {
+    width: 100%;
+}
+@media (min-width: 930px) {
+    .pricing .container .box.popular {
+      top: -20px;
+    }
+  }
+.pricing .box .label {
+    position: absolute;
+    -ms-writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    background-color: var(--main-color);
+    padding: 10px 10px 50px 10px;
+    color: white;
+    right: 20px;
+}
+.pricing .box .label::after {
+    content: "";
+    border-style: solid;
+    border-width: 20px;
+    border-color: transparent transparent white;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+.pricing .box .title {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 30px 0;
+}
+.pricing .box img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+.pricing .box .price{
+    margin-bottom: 20px;
+}
+.pricing .box .cost {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 5px;
+}
+.pricing .box .time {
+    color: #777;
+}
+.pricing .box ul {
+    text-align: left;
+}
+.pricing .box ul li {
+    padding: 20px;
+    border-top: 1px solid #e6e6e7;
+}
+.pricing .box ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    font-weight: bold;
+    color: var(--main-color);
+    margin-right: 10px;
+}
+.pricing .box a {
+    display: block;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 10px 20px;
+    width: fit-content;
+    margin: 10px auto 20px;
+    font-weight: bold;
+    -o-transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.pricing .box a:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: white;
+}
