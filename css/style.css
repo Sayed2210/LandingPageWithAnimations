@@ -133,6 +133,21 @@ img {
     border-color: white;
     transition-delay: .5s;
 }
+.dots {
+    background-image: url(../img/dots.png);
+    height: 186px;
+    width: 204px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.dots-up {
+    top: 200px;
+    right: 0;
+}
+.dots-down {
+    bottom: 200px;
+    left: 0;
+}
 /*Animations*/
 @keyframes up-down {
     0%,
@@ -536,6 +551,7 @@ img {
     padding: 15px;
     background-color: white;
     box-shadow: 0 20px 20px -20px rgba(0, 0, 0, .5);
+    z-index: 1;
 }
 .gallery .box .image {
     position: relative;
@@ -715,6 +731,7 @@ img {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
     background-color: var(--section-background);
+    position: relative;
 }
 .testimonials .container {
     display: grid;
@@ -890,6 +907,7 @@ img {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
     background-color: var(--section-background);
+    position: relative;
 }
 .services .container {
     display: grid;
@@ -1662,4 +1680,132 @@ img {
 }
 .discount .form [type="submit"]:hover {
     background-color: var(--main-color-alt);
+}
+/*Style Footer section*/
+.footer {
+    background-color: #191919;
+    padding-top: 70px;
+    box-shadow: 5px -2px 5px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 767px) {
+    .footer {
+        text-align: center;
+    }
+}
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px , 1fr));
+    gap: 40px;
+}
+.footer .box h2 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: white;
+}
+.footer .box .social {
+    display: flex;
+}
+@media (max-width: 767px) {
+    .footer .box .social {
+        justify-content: center;
+    }
+}
+.footer .box .social li {
+    margin-right: 10px;
+}
+.footer .box .social a {
+    color: #b9b9b9;
+    background-color: #313131;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    -o-transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.footer .box .social .facebook:hover {
+    background-color: #1877f2;
+}
+.footer .box .social .linkedin:hover {
+    background-color: #0077b5;
+}
+.footer .box .social .github:hover {
+    background-color: #6e5494;
+}
+.footer .box .text {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #b9b9b9;
+}
+.footer .box .links li {
+    padding: 15px 0;
+}
+.footer .box .links li:not(:last-child) {
+    border-bottom: 1px solid #444;
+}
+.footer .box .links li a {
+    color: #b9b9b9;
+    -o-transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    transition: var(--main-transition);
+}
+.footer .box .links li a::before {
+    content: "\f101";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+.footer .box .links li:hover a {
+    padding-left: 15px;
+    color: white;
+}
+.footer .box .line {
+    display: flex;
+    margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+    .footer .box .line {
+        flex-direction: column;
+    }
+}
+.footer .box .line i {
+    color: var(--main-color);
+    margin-right: 10px;
+}
+@media (max-width: 767px) {
+    .footer .box .line i {
+        margin-bottom: 10px;
+    }
+}
+.footer .box .line .info {
+    color: #b9b9b9;
+    flex: 1;
+}
+.footer .box .line .info span {
+    display: block;
+}
+.footer .footer-gallery img {
+    width: 72px;
+    border: 3px solid rgb(255, 255, 255);
+    margin: 2px;
+}
+@media (max-width: 767px) {
+    .footer .footer-gallery img {
+        width: 100px;
+        margin: 8px;
+    }  
+}
+.footer >p {
+    color: #b9b9b9;
+    margin: 20px 0 0;
+    text-align: center;
+    border-top: 1px solid #444;
+    padding: 15px;
 }
